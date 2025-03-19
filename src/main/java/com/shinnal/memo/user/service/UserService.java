@@ -3,6 +3,7 @@ package com.shinnal.memo.user.service;
 import org.springframework.stereotype.Service;
 
 import com.shinnal.memo.common.MD5HashingEncoder;
+import com.shinnal.memo.user.domain.User;
 import com.shinnal.memo.user.repository.UserRepository;
 
 @Service
@@ -29,18 +30,30 @@ public class UserService {
 		
 		
 		// 비밀번호를 암호화하여 repository에 메소드로 전달!!!
-
+		 
+//		MD5HashingEncoder encoder = new MD5HashingEncoder();
+//		String encyptPassword = encoder.encode(password);
 		
 		String encyptPassword = MD5HashingEncoder.encode(password);
 		
 		
-		int count = userRepository.insertUser(loginId, password, name, email);
+		int count = userRepository.insertUser(loginId, encyptPassword, name, email);
 		
 		if(count == 1) {
 			return true;
 		} else {
 			return false;
 		}
+		
+	}
+	
+	
+	public User getUser(String loginId, String password) {
+		
+		String encyptPassword = MD5HashingEncoder.encode(password);
+		
+		return userRepository.selectUser(loginId, encyptPassword);
+		
 		
 	}
 	
