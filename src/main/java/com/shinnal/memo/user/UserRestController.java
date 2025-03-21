@@ -30,12 +30,34 @@ public class UserRestController {
 	
 	// 회원가입 API
 	
+//	@PostMapping("/join")
+//	public Map<String, String> join(
+//			@RequestParam("loginId") String loginId
+//			, @RequestParam("password") String password
+//			, @RequestParam("name") String name
+//			, @RequestParam("email") String email) {
+//		
+//		Map<String, String> resultMap = new HashMap<>();
+//		
+//		
+//		if(userService.addUser(loginId, password, name, email)){
+//			// 성공
+//			resultMap.put("result", "success");
+//		} else {
+//			// 실패
+//			resultMap.put("result", "fail");
+//		}
+//		
+//		return resultMap;
+//		
+//	}
+	
 	@PostMapping("/join")
-	public Map<String, String> join(
-			@RequestParam("loginId") String loginId
-			, @RequestParam("password") String password
-			, @RequestParam("name") String name
-			, @RequestParam("email") String email) {
+	public Map<String, String> join( // 파라미터 이름에 매칭 - 변수에 적용 = 프로젝트 properties-> Java compiler -> store information about method parameters 체크
+			@RequestParam String loginId
+			, @RequestParam String password
+			, @RequestParam String name
+			, @RequestParam String email) {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -51,6 +73,9 @@ public class UserRestController {
 		return resultMap;
 		
 	}
+	
+	
+	
 	
 	
 	// 로그인 API

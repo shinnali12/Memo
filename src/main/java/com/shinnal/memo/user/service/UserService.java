@@ -40,10 +40,12 @@ public class UserService {
 		int count = userRepository.insertUser(loginId, encyptPassword, name, email);
 		
 		if(count == 1) {
-			return true;
+			return true; // 성공
 		} else {
-			return false;
+			return false; // 실패
 		}
+		
+//		return count == 1;
 		
 	}
 	
