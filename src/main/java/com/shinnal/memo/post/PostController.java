@@ -33,4 +33,12 @@ public class PostController {
 		return "post/list";
 	}
 	
+	
+	@GetMapping("/create-view")
+	public String inputJoin() {
+		
+		return "post/create";
+	}
+	
+	
 }
