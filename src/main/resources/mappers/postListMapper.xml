@@ -8,7 +8,7 @@
   	<select id="selectPostList" resultType="com.shinnal.memo.post.domain.PostList">
   		SELECT
   			`id`
-			, `name`
+			, `userId`
 			, `title`
 			, `memo`
 			, `image`
@@ -17,10 +17,31 @@
 		FROM
 			`memo_post`
 		WHERE
-			`id`
-			AND `title`
-			AND `createdAt`
+			`id` = #{id}
+			AND `title` = #{title}
+			AND `createdAt` = #{createdAt}
   	</select>
+  	
+  	
+  	<insert id="insertPostMemo" parameterType="map">
+  		INSERT INTO
+  			`memo_post`
+  		(	
+  			`userId`
+  			, `title`
+  			, `memo`
+  			, `image`  		
+  		)	
+  		VALUES
+  		(	
+  			#{userId}
+  			, #{title}
+  			, #{memo}
+  			, #{image}
+  			
+  		)
+  		
+  	</insert>
   	
   
   </mapper>

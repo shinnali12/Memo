@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class PostList {
 	
 	private int id;
+	private int userId;
 	private String name;
 	private String title;
 	private String memo;
@@ -19,6 +20,12 @@ public class PostList {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getName() {
 		return name;
@@ -56,7 +63,6 @@ public class PostList {
 	public void setUpdatedAt(LocalDateTime updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
 	
 	
 }
