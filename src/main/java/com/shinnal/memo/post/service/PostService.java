@@ -46,5 +46,14 @@ public class PostService {
 		
 	}
 	
+	public PostList getPost(int id) {
+		
+		PostList post = postRepository.getPostMemo(id);
+		
+		return post;
+		
+	}
+	
+	
 	
 }

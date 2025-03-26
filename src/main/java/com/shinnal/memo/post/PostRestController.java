@@ -34,9 +34,6 @@ public class PostRestController {
 			, HttpSession session) {
 		
 		
-		
-		
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		Map<String, String> resultMap = new HashMap<>();

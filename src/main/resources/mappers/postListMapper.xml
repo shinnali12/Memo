@@ -16,10 +16,7 @@
 			, `updatedAt`
 		FROM
 			`memo_post`
-		WHERE
-			`id` = #{id}
-			AND `title` = #{title}
-			AND `createdAt` = #{createdAt}
+			
   	</select>
   	
   	
@@ -42,6 +39,22 @@
   		)
   		
   	</insert>
+  	
+  	<select id="getPostMemo" resultType="com.shinnal.memo.post.domain.PostList" parameterType="int">
+  		SELECT
+  			`id`
+			, `userId`
+			, `title`
+			, `memo`
+			, `image`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`memo_post`
+		WHERE
+			`id` = #{id}	
+			
+  	</select>
   	
   
   </mapper>

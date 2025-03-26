@@ -17,7 +17,7 @@
         		<tbody>
         			<tr th:each="post:${postList}">
         				<td th:text="${post.id}">No</td>
-        				<td th:text="${post.title}">제목</td>
+        				<td> <a th:href="|/post/detail-view?id=${post.id}|" th:text="${post.title}">제목</a></td>
         				<td th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd')}">입력날짜</td>
         			</tr>
         		</tbody>

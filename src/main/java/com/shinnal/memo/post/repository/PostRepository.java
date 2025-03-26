@@ -18,5 +18,7 @@ public interface PostRepository {
 			,@Param("title") String title
 			,@Param("memo") String memo
 			,@Param("image") String image);
+	
+	public PostList getPostMemo(@Param("id") int id);
 
 }
