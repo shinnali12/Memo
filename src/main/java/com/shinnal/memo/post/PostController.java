@@ -42,7 +42,7 @@ public class PostController {
 	
 	
 	@GetMapping("/create-view")
-	public String inputJoin() {
+	public String inputMemo() {
 		
 		return "post/create";
 	}

@@ -37,8 +37,8 @@ public class PostRestController {
 		int userId = (Integer)session.getAttribute("userId");
 		
 		
-		
 		Map<String, String> resultMap = new HashMap<>();
+		
 		
 		if(postService.addPost(userId, title, memo, image)){
 			// 성공
