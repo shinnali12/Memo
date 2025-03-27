@@ -30,14 +30,15 @@ public class PostRestController {
 	public Map<String, String> createMemo(
 			@RequestParam("title") String title
 			, @RequestParam("memo") String memo
-			, @RequestParam("image") MultipartFile image
+			, @RequestParam(required=false) MultipartFile image
 			, HttpSession session) {
 		
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		Map<String, String> resultMap = new HashMap<>();
 		
+		
+		Map<String, String> resultMap = new HashMap<>();
 		
 		if(postService.addPost(userId, title, memo, image)){
 			// 성공
@@ -49,8 +50,9 @@ public class PostRestController {
 		
 		return resultMap;
 		
+		
 	}
-	
-	
+
+			
 	
 }

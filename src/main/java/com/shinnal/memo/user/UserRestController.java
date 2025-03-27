@@ -97,10 +97,14 @@ public class UserRestController {
 			// session은 특정 클라이언트의 정보를 저장한다.
 			// 다른 요청에서도 같은 클라이언트라면 해당 값을 사용할 수 있다.
 			
+			
+			System.out.println("" + user.getId());
+			
 			session.setAttribute("userId", user.getId());
 			// 로그인 정보를 저장하여 항상 표시해 줌- 이름 표시
 			session.setAttribute("userName", user.getName());
 			
+						
 			resultMap.put("result", "success");
 		} else {
 			// 실패
@@ -110,6 +114,8 @@ public class UserRestController {
 		return resultMap;
 		
 	}
+	
+	
 	
 	
 	
