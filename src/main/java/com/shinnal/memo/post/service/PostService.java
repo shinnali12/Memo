@@ -29,13 +29,14 @@ public class PostService {
 	
 	public boolean addPost(
 			int userId
+			, String userName
 			, String title
 			, String memo
 			, MultipartFile image) {
 		
 		String urlPath = FileManager.saveFile(userId, image); 
 		
-		int count = postRepository.insertPostMemo(userId, title, memo, urlPath);
+		int count = postRepository.insertPostMemo(userId, userName, title, memo, urlPath);
 		
 		if(count == 1) {
 			return true;

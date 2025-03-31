@@ -6,13 +6,12 @@ public class PostList {
 	
 	private int id;
 	private int userId;
+	private String userName;
 	private String title;
 	private String memo;
 	private String image;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
-	
-	
 	public int getId() {
 		return id;
 	}
@@ -24,6 +23,12 @@ public class PostList {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getTitle() {
 		return title;
@@ -55,6 +60,5 @@ public class PostList {
 	public void setUpdatedAt(LocalDateTime updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
 	
 }

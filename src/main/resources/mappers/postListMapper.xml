@@ -9,6 +9,7 @@
   		SELECT
   			`id`
 			, `userId`
+			, `userName`
 			, `title`
 			, `memo`
 			, `image`
@@ -25,6 +26,7 @@
   			`memo_post`
   		(	
   			`userId`
+  			, `userName`
   			, `title`
   			, `memo`
   			, `image`  		
@@ -32,6 +34,7 @@
   		VALUES
   		(	
   			#{userId}
+  			, #{userName}
   			, #{title}
   			, #{memo}
   			, #{image}
@@ -44,6 +47,7 @@
   		SELECT
   			`id`
 			, `userId`
+			, `userName`
 			, `title`
 			, `memo`
 			, `image`
