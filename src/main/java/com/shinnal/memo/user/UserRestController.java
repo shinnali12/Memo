@@ -98,11 +98,10 @@ public class UserRestController {
 			// 다른 요청에서도 같은 클라이언트라면 해당 값을 사용할 수 있다.
 			
 			
-			System.out.println("user.getId : " + user.getId());
+			System.out.println("" + user.getId());
 			
 			session.setAttribute("userId", user.getId());
 			// 로그인 정보를 저장하여 항상 표시해 줌- 이름 표시
-			session.setAttribute("userLoginId", user.getLoginId());
 			session.setAttribute("userName", user.getName());
 			
 						

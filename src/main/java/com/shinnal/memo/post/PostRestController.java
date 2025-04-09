@@ -34,18 +34,17 @@ public class PostRestController {
 			, HttpSession session) {
 		
 		
-		Integer userId = (Integer)session.getAttribute("userId");
-		String userName = (String) session.getAttribute("userName");
+		int userId = (Integer)session.getAttribute("userId");
 		
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		
-		if(postService.addPost(userId, userName, title, memo, image)){
+		if(postService.addPost(userId, title, memo, image)){
 			// 성공
 			resultMap.put("result", "success");
 		} else {
-			// 실패0
+			// 실패
 			resultMap.put("result", "fail");
 		}
 		

@@ -15,10 +15,9 @@ public interface PostRepository {
 	
 	public int insertPostMemo(
 			@Param("userId") int userId
-			, @Param("userName") String userName
-			, @Param("title") String title
-			, @Param("memo") String memo
-			, @Param("image") String image);
+			,@Param("title") String title
+			,@Param("memo") String memo
+			,@Param("image") String image);
 	
 	public PostList getPostMemo(@Param("id") int id);
 

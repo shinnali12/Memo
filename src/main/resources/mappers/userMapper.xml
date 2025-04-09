@@ -31,7 +31,7 @@
   	
   		SELECT 
   			`id`
-  			, `loginId`
+  			`loginId`
 			, `password`
 			, `name`
 			, `email`
