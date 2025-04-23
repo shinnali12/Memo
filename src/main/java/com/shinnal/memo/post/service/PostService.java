@@ -9,6 +9,8 @@ import com.shinnal.memo.common.FileManager;
 import com.shinnal.memo.post.domain.PostList;
 import com.shinnal.memo.post.repository.PostRepository;
 
+import jakarta.persistence.PersistenceException;
+
 @Service
 public class PostService {
 	
@@ -54,6 +56,57 @@ public class PostService {
 		
 	}
 	
+	
+//	public boolean updatePost(int id, String title, String contents) {
+//		
+//		Optional<Post> optionalPost = postRepository.findById(id);
+//		
+//		if(optionalPost.isPresent()) {
+//			
+//			Post post = optionalPost.get();
+//			
+//			post = post.toBuilder()
+//			.title(title)
+//			.contents(contents)
+//			.build();
+//			
+//			try {				
+//				postRepository.save(post);
+//			} catch(PersistenceException e) {
+//				return false;
+//			}
+//			
+//		} else {
+//			return false;
+//		}
+//		
+//		return true;
+//		
+//	}
+//	
+//	public boolean deletePost(int id) {
+//		
+//		Optional<Post> optionalPost = postRepository.findById(id);
+//		
+//		if(optionalPost.isPresent()) {
+//			
+//			Post post = optionalPost.get();
+//			
+//			FileManager.removeFile(post.getImagePath());
+//			
+//			try {				
+//				postRepository.delete(post);
+//			} catch(PersistenceException e) {
+//				return false;
+//			}
+//			
+//		} else {
+//			return false;
+//		}
+//		
+//		return true;
+//	}
+//	
 	
 	
 }
